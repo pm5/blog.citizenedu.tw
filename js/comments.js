@@ -98,6 +98,10 @@
 
 	var debug = _Debug2["default"]("component:Comments");
 
+	function postPathToId(path) {
+	    return path.replace("/posts/", "");
+	}
+
 	exports["default"] = _React2["default"].createClass({
 	    displayName: "Comments",
 
@@ -137,7 +141,7 @@
 	    getCommentData: function getCommentData() {
 	        _superagent2["default"]
 	        // XXX posts path
-	        .get(_helper2["default"].topicURL(this.state.path.replace("/posts/", ""))).use(_helper2["default"].withPromise()).end().then((function (res) {
+	        .get(_helper2["default"].topicURL(postPathToId(this.state.path), { json: true })).use(_helper2["default"].withPromise()).end().then((function (res) {
 	            if (this.isMounted()) {
 	                this.setState({
 	                    commentData: res.body.post_stream.posts.slice(1)
@@ -297,7 +301,7 @@
 	            _React2["default"].createElement(
 	                "a",
 	                { className: "Comments-button--hightlight",
-	                    href: "http://community.citizenedu.tw/t/topic/" + this.state.path.replace("posts/", ""),
+	                    href: _helper2["default"].topicURL(postPathToId(this.state.path)),
 	                    target: "_blank" },
 	                "我要留言"
 	            )
@@ -307,7 +311,7 @@
 	            _React2["default"].createElement(
 	                "a",
 	                { className: "Comments-button--hightlight",
-	                    href: "http://community.citizenedu.tw/t/topic/" + this.state.path.replace("posts/", ""),
+	                    href: _helper2["default"].topicURL(postPathToId(this.state.path)),
 	                    target: "_blank" },
 	                "我要留言"
 	            )
@@ -702,8 +706,16 @@
 	  baseURL: 'http://community.citizenedu.tw',
 
 	  topicURL: function topicURL(id) {
+	    var _ref = arguments[1] === undefined ? {} : arguments[1];
+
+	    var json = _ref.json;
+
 	    id = id.replace(/\/$/, '');
-	    return 'http://community.citizenedu.tw/t/topic/' + id + '.json';
+	    if (json) {
+	      return 'http://community.citizenedu.tw/t/topic/' + id + '.json';
+	    } else {
+	      return 'http://community.citizenedu.tw/t/topic/' + id;
+	    }
 	  },
 
 	  // superagent middleware
