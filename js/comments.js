@@ -428,8 +428,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/pm5/src/watchout/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/pm5/src/watchout/blog.citizenedu.tw/app/components/Comments/Comments.css", function() {
-			var newContent = require("!!/Users/pm5/src/watchout/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/pm5/src/watchout/blog.citizenedu.tw/app/components/Comments/Comments.css");
+		module.hot.accept("!!/Users/soidid/citizen-blog/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/soidid/citizen-blog/blog.citizenedu.tw/app/components/Comments/Comments.css", function() {
+			var newContent = require("!!/Users/soidid/citizen-blog/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/soidid/citizen-blog/blog.citizenedu.tw/app/components/Comments/Comments.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -462,8 +462,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/pm5/src/watchout/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/pm5/src/watchout/blog.citizenedu.tw/app/components/Tabs/Tabs.css", function() {
-			var newContent = require("!!/Users/pm5/src/watchout/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/pm5/src/watchout/blog.citizenedu.tw/app/components/Tabs/Tabs.css");
+		module.hot.accept("!!/Users/soidid/citizen-blog/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/soidid/citizen-blog/blog.citizenedu.tw/app/components/Tabs/Tabs.css", function() {
+			var newContent = require("!!/Users/soidid/citizen-blog/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/soidid/citizen-blog/blog.citizenedu.tw/app/components/Tabs/Tabs.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
