@@ -14569,7 +14569,7 @@
 	var getActiveElement = __webpack_require__(180);
 	var isTextInputElement = __webpack_require__(167);
 	var keyOf = __webpack_require__(101);
-	var shallowEqual = __webpack_require__(139);
+	var shallowEqual = __webpack_require__(141);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -15773,7 +15773,9 @@
 
 
 /***/ },
-/* 139 */
+/* 139 */,
+/* 140 */,
+/* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15821,8 +15823,6 @@
 
 
 /***/ },
-/* 140 */,
-/* 141 */,
 /* 142 */,
 /* 143 */,
 /* 144 */
