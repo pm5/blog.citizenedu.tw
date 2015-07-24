@@ -21108,7 +21108,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactTransmit = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-transmit\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _reactTransmit = __webpack_require__(204);
 
 	var _reactTransmit2 = _interopRequireDefault(_reactTransmit);
 
@@ -21182,6 +21182,395 @@
 	  }
 	});
 	module.exports = exports["default"];
+
+/***/ },
+/* 204 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * @copyright © 2015, Rick Wong. All rights reserved.
+	 */
+	"use strict";
+
+	module.exports = {
+		createContainer:       __webpack_require__(205),
+		render:                __webpack_require__(208),
+		renderToString:        __webpack_require__(209),
+		injectIntoMarkup:      __webpack_require__(210),
+		setPromiseConstructor: function (PromiseConstructor) {
+			__webpack_require__(206).Promise = PromiseConstructor;
+		}
+	};
+
+
+/***/ },
+/* 205 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * @copyright © 2015, Rick Wong. All rights reserved.
+	 */
+	"use strict";
+
+	var promiseProxy = __webpack_require__(206);
+	var React        = __webpack_require__(207);
+	var assign       = React.__spread;
+
+	/**
+	 * @function createContainer
+	 */
+	module.exports = function (Component, options) {
+		options = arguments[1] || {};
+
+		var Container = React.createClass({
+			displayName: Component.displayName + "Container",
+			propTypes: {
+				queryParams: React.PropTypes.object,
+				onQuery:     React.PropTypes.func,
+				emptyView:   React.PropTypes.oneOfType([
+					React.PropTypes.element,
+					React.PropTypes.func
+		        ])
+			},
+			statics: {
+				queryParams: options.queryParams || {},
+				queries:     options.queries || {},
+				getQuery:    function (queryName, queryParams) {
+					if (!Container.queries[queryName]) {
+						throw new Error(Component.displayName + " has no '" + queryName +"' query")
+					}
+
+					queryParams = queryParams || {};
+					assign(queryParams, Container.queryParams, assign({}, queryParams));
+
+					return Container.queries[queryName](queryParams);
+				},
+				getAllQueries: function (queryParams, optionalQueryNames) {
+					var promises = [];
+					optionalQueryNames = optionalQueryNames || [];
+
+					if (typeof optionalQueryNames === "string") {
+						optionalQueryNames = [optionalQueryNames];
+					}
+
+					Object.keys(Container.queries).forEach(function (queryName) {
+						if (optionalQueryNames.length && optionalQueryNames.indexOf(queryName) < 0) {
+							return;
+						}
+
+						var promise = Container.getQuery(
+							queryName, queryParams
+						).then(function (queryResult) {
+							var queryResults = {};
+							queryResults[queryName] = queryResult;
+
+							return queryResults;
+						});
+
+						promises.push(promise);
+					});
+
+					if (!promises.length) {
+						promises.push(promiseProxy.Promise.resolve(true));
+					}
+
+					return promiseProxy.Promise.all(
+						promises
+					).then(function (promisedQueries) {
+						var queryResults = {};
+
+						promisedQueries.forEach(function (promisedQuery) {
+							if (typeof promisedQuery === "object") {
+								assign(queryResults, promisedQuery);
+							}
+						});
+
+						return queryResults;
+					});
+				}
+			},
+			componentWillMount: function () {
+				var externalQueryParams = this.props && this.props.queryParams || {};
+
+				this.currentParams = assign({}, Container.queryParams, externalQueryParams);
+
+				if (!this.hasQueryResults()) {
+					this.setQueryParams({});
+				}
+				else if (this.props.onQuery) {
+					this.props.onQuery.call(this, promiseProxy.Promise.resolve({}));
+				}
+			},
+			setQueryParams: function (nextParams, optionalQueryNames) {
+				var _this = this;
+
+				var promise = new promiseProxy.Promise(function (resolve, reject) {
+					var props = _this.props || {};
+					var promise;
+
+					assign(_this.currentParams, nextParams);
+					promise = Container.getAllQueries(_this.currentParams, optionalQueryNames);
+
+					promise.then(function (queryResults) {
+						try {
+							_this.setState(queryResults);
+						}
+						catch (error) {
+							// Call to setState may fail if renderToString() was used.
+							if (!error.message || !error.message.match(/^document/)) {
+								throw error;
+							}
+						}
+
+						return queryResults;
+					});
+
+					resolve(promise);
+				});
+
+				if (this.props.onQuery) {
+					this.props.onQuery.call(this, promise);
+				}
+
+				return promise;
+			},
+			/**
+			 * @returns {boolean} true if all queries have results.
+			 */
+			hasQueryResults: function () {
+				var state = this.state || {};
+				var props = this.props || {};
+
+				if (!Object.keys(Container.queries).length) {
+					return true;
+				}
+
+				for (var queryName in Container.queries) {
+					if (!Container.queries.hasOwnProperty(queryName) ||
+					    props.hasOwnProperty(queryName) ||
+					    state.hasOwnProperty(queryName)) {
+						continue;
+					}
+
+					return false;
+				}
+
+				return true;
+			},
+			/**
+			 * @returns {ReactElement} or null
+			 */
+			render: function () {
+				var state     = this.state || {};
+				var props     = this.props || {};
+				var utilProps = {
+					queryParams:    this.currentParams,
+					setQueryParams: this.setQueryParams,
+					onQuery:        undefined
+				};
+
+				// Query results must be guaranteed to render.
+				if (!this.hasQueryResults()) {
+					return (typeof props.emptyView === "function") ?
+					       props.emptyView() :
+					       props.emptyView || null;
+				}
+
+				return React.createElement(
+					Component,
+					assign({}, props, state, utilProps)
+				);
+			}
+		});
+
+		return Container;
+	};
+
+
+/***/ },
+/* 206 */
+/***/ function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	 * @copyright © 2015, Rick Wong. All rights reserved.
+	 */
+	"use strict";
+
+	module.exports = {
+		Promise: global.Promise || function () {
+			throw new Error("Missing ES6 Promise implementation");
+		}
+	};
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 207 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * @copyright © 2015, Rick Wong. All rights reserved.
+	 */
+	"use strict";
+
+	module.exports = __webpack_require__(29);
+
+
+/***/ },
+/* 208 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * @copyright © 2015, Rick Wong. All rights reserved.
+	 */
+	"use strict";
+
+	var React  = __webpack_require__(207);
+	var assign = React.__spread;
+
+	/**
+	 * @function render
+	 */
+	module.exports = function (Component, props, targetDOMNode, callback) {
+		var myProps = assign({}, props, window.__reactTransmitPacket || {});
+
+		if (window.__reactTransmitPacket) {
+			delete window.__reactTransmitPacket;
+		}
+
+		React.render(React.createElement(Component, myProps), targetDOMNode, callback);
+	};
+
+
+/***/ },
+/* 209 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * @copyright © 2015, Rick Wong. All rights reserved.
+	 */
+	"use strict";
+
+	var promiseProxy = __webpack_require__(206);
+	var React        = __webpack_require__(207);
+	var assign       = React.__spread;
+
+	/**
+	 * @function renderToString
+	 */
+	module.exports = function (Component, props) {
+		props = props || {};
+
+		return new promiseProxy.Promise(function (resolve, reject) {
+			var onQuery = function (promise) {
+				promise.then(function (queryResults) {
+					var myProps     = assign({}, props, queryResults);
+					var reactString = React.renderToString(React.createElement(Component, myProps));
+
+					resolve({
+						reactString: reactString,
+						reactData:   queryResults
+					});
+				}).catch(function (error) {
+					reject(error);
+				});
+			};
+
+			var myProps = assign({}, props, {onQuery: onQuery});
+			React.renderToString(React.createElement(Component, myProps));
+		});
+	};
+
+
+/***/ },
+/* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * NOTE: This file is copied from `react-async`. Thanks Andrey Popp!
+	 *
+	 * @see https://github.com/andreypopp/react-async
+	 */
+	"use strict";
+
+	var asciiJSON = __webpack_require__(211);
+
+	/**
+	 * Inject data and optional client scripts into markup.
+	 *
+	 * @param {String} markup
+	 * @param {Object} data
+	 * @param {?Array} scripts
+	 */
+	function injectIntoMarkup(markup, data, scripts) {
+		var escapedJson = asciiJSON.stringify(data).replace(/<\//g, '<\\/');
+		var injected = '<script>window.__reactTransmitPacket=' + escapedJson + '</script>';
+
+		if (scripts) {
+			injected += scripts.map(function(script) {
+				return '<script src="' + script + '"></script>';
+			}).join('');
+		}
+
+		if (markup.indexOf('</body>') > -1) {
+			return markup.replace('</body>', injected + '$&');
+		} else {
+			return markup + injected;
+		}
+	}
+
+	module.exports = injectIntoMarkup;
+
+
+/***/ },
+/* 211 */
+/***/ function(module, exports) {
+
+	// Generated by CoffeeScript 1.6.2
+	(function() {
+	  var asciiJSON;
+
+	  asciiJSON = exports;
+
+	  asciiJSON.isAscii = function(text) {
+	    return /^[\x00-\x7F]*$/.test(text);
+	  };
+
+	  asciiJSON.escapeNonAsciis = function(text) {
+	    var chars, code, i;
+
+	    chars = [];
+	    i = 0;
+	    while (i < text.length) {
+	      code = text.charCodeAt(i);
+	      if (code < 128) {
+	        chars.push(text[i]);
+	      } else {
+	        if (code < 256) {
+	          chars.push('\\u00');
+	        } else if (code < 4096) {
+	          chars.push('\\u0');
+	        } else {
+	          chars.push('\\u');
+	        }
+	        chars.push(code.toString(16));
+	      }
+	      i++;
+	    }
+	    return chars.join('');
+	  };
+
+	  asciiJSON.stringify = function(object) {
+	    var utf8JSON;
+
+	    utf8JSON = JSON.stringify(object);
+	    return asciiJSON.escapeNonAsciis(utf8JSON);
+	  };
+
+	  asciiJSON.parse = JSON.parse;
+
+	}).call(this);
+
 
 /***/ }
 /******/ ]);
