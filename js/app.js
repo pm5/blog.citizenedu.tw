@@ -86,8 +86,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/normalize.css", function() {
-			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/normalize.css");
+		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/normalize.css", function() {
+			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/normalize.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -333,8 +333,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/main.css", function() {
-			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/main.css");
+		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/main.css", function() {
+			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/main.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -364,8 +364,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/AboutSite/AboutSite.css", function() {
-			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/AboutSite/AboutSite.css");
+		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/AboutSite/AboutSite.css", function() {
+			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/AboutSite/AboutSite.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -394,8 +394,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/AppBar/AppBar.css", function() {
-			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/AppBar/AppBar.css");
+		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/AppBar/AppBar.css", function() {
+			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/AppBar/AppBar.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -424,8 +424,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Arthor/Arthor.css", function() {
-			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Arthor/Arthor.css");
+		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Arthor/Arthor.css", function() {
+			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Arthor/Arthor.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -454,8 +454,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Article/Article.css", function() {
-			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Article/Article.css");
+		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Article/Article.css", function() {
+			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Article/Article.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -468,7 +468,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
-	exports.push([module.id, "/** @define Article; use strict */\n.Article {\n  background: white;\n  width: 100%;\n  margin: 0px auto;\n\n  position: relative;\n  overflow: hidden;\n}\n.Article-content a, .Article-content a:visited {\n  border: none;\n  color: rgb(135,184,37);\n}\n.Article-authorBackground {\n  /*background: rgb(230,230,230);*/\n  padding: 10px;\n}\n.Article-author {\n  padding-bottom: 30px;\n\n}\n.Article-cover {\n  width: 100%;\n  height: 150px;\n  overflow: hidden;\n  position: relative;\n}\n.Article-coverImg {\n  height: 150px;\n}\n.Article-coverCopyright a {\n  color: #2F2930;\n  border: none;\n  font-size: 12px;\n}\n.Article-coverCopyright {\n  color: #2F2930;\n  position: absolute;\n  bottom: 4px;\n  right: 10px;\n  cursor: pointer;\n  border: none;\n  font-size: 12px;\n}\nh1.Article-title {\n  border-left: none;\n  padding-top: 30px;\n  padding-bottom: 40px;\n  padding-left: 0;\n}\n@media screen and (min-width: 400px) {\n    h1.Article-title {\n        padding-top: 0;\n        padding-bottom: 0;\n    }\n}\n@media screen and (min-width: 400px) and (max-width: 1299px) {\n    .Article-content,.Article-author{\n\t\t    max-width: 600px;\n        margin: 0 auto;\n    }\n    .Article-cover {\n        width: 100%;\n        height: 300px;\n    }\n    .Article-coverImg {\n      height: 300px;\n    }\n}\n@media screen and (min-width: 1300px) {\n    .Article-content,.Article-author{\n\t\t    max-width: 600px;\n        margin: 0 auto;\n    }\n    .Article-cover {\n        width: 100%;\n        height: 300px;\n    }\n    .Article-coverImg {\n      width: 100%;\n      height: auto;\n    }\n}\n.Article-content {\n  background: rgba(255,255,255,0.8);\n  position: relative;\n  padding: 8px;\n}\n\n@media screen and (max-width: 400px){\n  .Article-content h1:first-child {\n      margin: 0;\n  }\n}\n.Article-author {\n  //background: #FAFAFA;\n  line-height: 1.4;\n  font-family: 'Noto Sans', sans-serif;\n\n}\n.Article-authorHeader {\n  min-height: 0px;\n}\n.Article-avatar {\n  cursor: pointer;\n\tfloat: left;\n  margin: 20px 0px 0px 20px;\n  background: white;\n  //border: 3px solid rgb(140,140,140);\n  //box-shadow: 3px 3px 0px rgba(200,200,200,0.4);\n  border: 1px solid rgb(100,100,100);\n  border-radius: 50%;\n  width: 60px;\n}\n.Article-avatar:hover {\n  box-shadow: 3px 3px 0px rgba(200,200,200,0.7);\n}\n.Article-info {\n\toverflow:hidden;  _overflow:visible;  zoom:1;\n\tpadding-left:10px;\n  padding-top: 24px;\n\n}\na.Article-name {\n  cursor: pointer;\n  font-size: 20px;\n  font-weight: 800;\n\n  display: inline-block;\n  border: none;\n}\na.Article-name:hover {\n  text-decoration: underline;\n}\ndiv.Article-date {\n  display: inline-block;\n  font-size: 10px;\n  font-weight: 200;\n  margin: 0 6px;\n}\n\n.Article-footer {\n  text-align: center;\n  background: rgb(230,230,230);\n  min-height: 150px;\n\n}\n", ""]);
+	exports.push([module.id, "/** @define Article; use strict */\n.Article {\n  background: white;\n  width: 100%;\n  margin: 0px auto;\n\n  position: relative;\n  overflow: hidden;\n}\n.Article-content a, .Article-content a:visited {\n  border: none;\n  color: rgb(135,184,37);\n}\n.Article-authorBackground {\n  /*background: rgb(230,230,230);*/\n  padding: 10px;\n}\n.Article-author {\n  padding-bottom: 30px;\n\n}\n.Article-cover {\n  width: 100%;\n  height: 150px;\n  overflow: hidden;\n  position: relative;\n}\n.Article-coverImg {\n  height: 150px;\n}\n.Article-coverCopyright a {\n  color: #2F2930;\n  border: none;\n  font-size: 12px;\n}\n.Article-coverCopyright {\n  color: #2F2930;\n  position: absolute;\n  bottom: 4px;\n  right: 10px;\n  cursor: pointer;\n  border: none;\n  font-size: 12px;\n}\nh1.Article-title {\n  border-left: none;\n  padding-top: 30px;\n  padding-bottom: 40px;\n  padding-left: 0;\n}\n@media screen and (min-width: 400px) {\n    h1.Article-title {\n        padding-top: 0;\n        padding-bottom: 0;\n    }\n}\n@media screen and (min-width: 400px) and (max-width: 1299px) {\n    .Article-content,.Article-author{\n\t\t    max-width: 600px;\n        margin: 0 auto;\n    }\n    .Article-cover {\n        width: 100%;\n        height: 300px;\n    }\n    .Article-coverImg {\n      height: 300px;\n    }\n}\n@media screen and (min-width: 1300px) {\n    .Article-content,.Article-author{\n\t\t    max-width: 600px;\n        margin: 0 auto;\n    }\n    .Article-cover {\n        width: 100%;\n        height: 300px;\n    }\n    .Article-coverImg {\n      width: 100%;\n      height: auto;\n    }\n}\n.Article-content {\n  background: rgba(255,255,255,0.8);\n  position: relative;\n  padding: 8px;\n}\n\n@media screen and (max-width: 400px){\n  .Article-content h1:first-child {\n      margin: 0;\n  }\n}\n.Article-author {\n  //background: #FAFAFA;\n  line-height: 1.4;\n  font-family: 'Noto Sans', sans-serif;\n\n}\n.Article-authorHeader {\n  min-height: 0px;\n}\n.Article-avatar {\n  cursor: pointer;\n\tfloat: left;\n  margin: 20px 0px 0px 20px;\n  background: white;\n  //border: 3px solid rgb(140,140,140);\n  //box-shadow: 3px 3px 0px rgba(200,200,200,0.4);\n  border: 1px solid rgb(100,100,100);\n  border-radius: 50%;\n  width: 60px;\n}\n.Article-avatar:hover {\n  box-shadow: 3px 3px 0px rgba(200,200,200,0.7);\n}\n.Article-info {\n\toverflow:hidden;  _overflow:visible;  zoom:1;\n\tpadding-left:10px;\n  padding-top: 24px;\n\n}\na.Article-name {\n  cursor: pointer;\n  font-size: 20px;\n  font-weight: 800;\n\n  display: inline-block;\n  border: none;\n}\na.Article-name:hover {\n  text-decoration: underline;\n}\ndiv.Article-date {\n  display: inline-block;\n  font-size: 10px;\n  font-weight: 200;\n  margin: 0 6px;\n}\n.Article-cfpLink {\n  border: none;\n  text-decoration: none;\n  display: block;\n  margin-top: 10px;\n}\n.Article-cfpImg {\n  width: calc( 100% - 10px );\n  padding: 5px;\n\n}\n\n.Article-footer {\n  text-align: center;\n  background: rgb(230,230,230);\n  min-height: 150px;\n\n}\n", ""]);
 
 /***/ },
 /* 15 */
@@ -484,8 +484,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Author/Author.css", function() {
-			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Author/Author.css");
+		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Author/Author.css", function() {
+			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Author/Author.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -514,8 +514,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Columns/Columns.css", function() {
-			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Columns/Columns.css");
+		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Columns/Columns.css", function() {
+			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Columns/Columns.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -544,8 +544,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Comments/Comments.css", function() {
-			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Comments/Comments.css");
+		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Comments/Comments.css", function() {
+			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Comments/Comments.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -574,8 +574,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/List/List.css", function() {
-			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/List/List.css");
+		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/List/List.css", function() {
+			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/List/List.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -604,8 +604,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Social/Social.css", function() {
-			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Social/Social.css");
+		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Social/Social.css", function() {
+			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Social/Social.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -634,8 +634,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Tabs/Tabs.css", function() {
-			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Tabs/Tabs.css");
+		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Tabs/Tabs.css", function() {
+			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Tabs/Tabs.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -664,8 +664,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Tags/Tags.css", function() {
-			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Tags/Tags.css");
+		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Tags/Tags.css", function() {
+			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Tags/Tags.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
