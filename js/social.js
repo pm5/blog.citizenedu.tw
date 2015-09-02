@@ -309,8 +309,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Social/Social.css", function() {
-			var newContent = require("!!/Users/aging/blog.citizenedu.tw/node_modules/css-loader/index.js!/Users/aging/blog.citizenedu.tw/app/components/Social/Social.css");
+		module.hot.accept("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Social/Social.css", function() {
+			var newContent = require("!!/home/pm5/blog.citizenedu.tw/node_modules/css-loader/index.js!/home/pm5/blog.citizenedu.tw/app/components/Social/Social.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
